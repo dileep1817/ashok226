@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Details</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #2a5298;
+            box-shadow: 0 0 5px rgba(42, 82, 152, 0.5);
+            outline: none;
+        }
+
+        input[type="file"] {
+            padding: 8px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(to right, #2a5298, #1e3c72);
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .custom-duration-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+
+        #custom-duration {
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Rental Details</h2>
+        <form id="rentalForm" action="confirmation.html" method="GET">
+            
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="driving-proof">Upload Driving Proof</label>
+                <input type="file" id="driving-proof" name="driving-proof" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="id-proof">Upload ID Proof</label>
+                <input type="file" id="id-proof" name="id-proof" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rental-date">Select Rental Date</label>
+                <input type="date" id="rental-date" name="rental-date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Select or Type Rental Duration</label>
+                <div class="custom-duration-wrapper">
+                    <select id="duration" name="duration" onchange="enableCustomDuration()" required>
+                        <option value="">Select Duration</option>
+                        <option value="1 hour">1 hour</option>
+                        <option value="2 hours">2 hours</option>
+                        <option value="4 hours">4 hours</option>
+                        <option value="1 day">1 day</option>
+                        <option value="2 days">2 days</option>
+                        <option value="3 days">3 days</option>
+                        <option value="Custom">Custom</option>
+                    </select>
+                    
+                    <input type="text" id="custom-duration" name="custom-duration" placeholder="Enter custom duration in hours">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="plan">Rental Plan</label>
+                <input type="text" id="plan" name="plan" value="Plan Name" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="text" id="price" name="price" value="₹ 0" readonly>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Details</button>
+        </form>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const plan = urlParams.get('plan');
+            const price = urlParams.get('price');
+            const duration = urlParams.get('duration');
+
+            if (plan && price && duration) {
+                document.getElementById('plan').value = plan;
+                document.getElementById('price').value = '₹ ' + price;
+                document.getElementById('duration').value = duration;
+            }
+        };
+
+        function enableCustomDuration() {
+            const durationSelect = document.getElementById("duration");
+            const customDurationInput = document.getElementById("custom-duration");
+
+            if (durationSelect.value === "Custom") {
+                customDurationInput.style.display = "block";
+            } else {
+                customDurationInput.style.display = "none";
+            }
+        }
+
+        document.getElementById('rentalForm').onsubmit = function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(event.target);
+            const params = new URLSearchParams();
+            formData.forEach((value, key) => {
+                params.append(key, value);
+            });
+
+            window.location.href = 'confirmation.html?' + params.toString();
+        };
+    </script>
+
+</body>
+</html>

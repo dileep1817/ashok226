@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - bike rental</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        /* Video Background */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Overlay for Text and Image */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .overlay img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .overlay h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .get-started-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #0fbff5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            animation: slideUp 1.5s ease-in-out;
+        }
+        .get-started-btn:hover {
+            background: #0aa3d1;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        <video autoplay loop muted>
+            <source src="bike.mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="overlay">
+        <img src="bikelogo.jpg" alt="bike Logo">
+        <h1>Welcome to Bike Rental</h1>
+        <button class="get-started-btn" onclick="window.location.href='login.html'">Get Started</button>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Rental</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 20px;
+            color: white;
+        }
+
+            .header img {
+            height: 40px;
+        }
+
+        .nav-links button {
+            background: transparent;
+            border: 2px solid white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 0 15px;
+            transition: 0.3s ease;
+        }
+
+        .nav-links button:hover {
+            background-color: white;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #555;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+/* Search Bar Styles */
+        .search-bar {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .search-bar input {
+            width: 60%;
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            border-radius: 30px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            border-color: #28a745;
+        }
+
+        .search-bar button {
+            padding: 12px 25px;
+            margin-left: 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-bar button:hover {
+            background-color: #218838;
+        }
+
+        /* Popular Searches */
+        .popular-search {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .slider {
+            display: flex;
+            width: 300%;
+            transition: transform 1s ease-in-out;
+        }
+        .slide {
+            width: 100%;
+            flex: 0 0 100%;
+            text-align: center;
+        }
+        .slide img {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #333;
+            text-align: center;
+            padding: 15px;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .search-bar input {
+                width: 80%;
+            }
+
+            .navbar {
+                font-size: 22px;
+            }
+
+            .slider-container {
+                width: 90%;
+            }
+
+            .slide img {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links button {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .search-bar input {
+                width: 85%;
+            }
+
+            .slider-container {
+                width: 100%;
+            }
+
+            .slide img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <img src="bikelogo.jpg" alt="Company Logo">
+        <div class="nav-links">
+            <button onclick="location.href='home.html'">Home</button>
+            <button onclick="location.href='ourbikes.html'">Our Bikes</button>
+            <button onclick="location.href='pricing.html'">Pricing</button>
+            <button onclick="location.href='login2.html'">Login</button>
+        </div>
+    </div>
+
+    <!-- Navbar Section -->
+    <div class="navbar">BIKE RENTAL</div>
+
+    <!-- Search Bar Section -->
+    <div class="search-bar">
+        <input type="text" placeholder="Search for Bikes">
+        <button>Search</button>
+    </div>
+
+    <!-- Popular Searches Section -->
+    <div class="popular-search">Popular Searches</div>
+
+    <!-- Image Slider Section -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="BIKE1.jpg" alt="Rent 3 Get 60% Off"></div>
+            <div class="slide"><img src="BIKE2.jpg" alt="Hero Bikes"></div>
+            <div class="slide"><img src="BIKE3.jpg" alt="Best Bikes"></div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        &copy; 2025 Bike Rental Store. All Rights Reserved.
+    </div>
+
+    <script>
+        let index = 0;
+        function slideShow() {
+            const slides = document.querySelector('.slider');
+            index = (index + 1) % 3;
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+        setInterval(slideShow, 3000);
+    </script>
+
+</body>
+</html>

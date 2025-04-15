@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Rental Pricing</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            color: white;
+        }
+
+        .header img {
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .nav-links button {
+            background: transparent;
+            border: 2px solid white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links button:hover {
+            background-color: white;
+            color: #333;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 50px 0;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 30px auto;
+            border-radius: 15px;
+            max-width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .pricing-section h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #444;
+        }
+
+        .pricing-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-item {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-item h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .pricing-item p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 28px;
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .discount {
+            font-size: 18px;
+            color: #dc3545;
+            text-decoration: line-through;
+            margin-bottom: 15px;
+        }
+
+        .pricing-item ul {
+            text-align: left;
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .pricing-item ul li {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .cta {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 15px;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links button {
+                margin: 5px 0;
+            }
+
+            .pricing-table {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <img src="bikelogo.jpg" alt="Company Logo">
+        <div class="nav-links">
+            <button onclick="location.href='home.html'">Home</button>
+            <button onclick="location.href='ourbikes.html'">Our Bikes</button>
+            <button onclick="location.href='pricing.html'">Pricing</button>
+            <button onclick="location.href='login2.html'">Login</button>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <h2>Our Pricing Plans</h2>
+
+        <div class="pricing-table">
+
+            <div class="pricing-item">
+                <h3>Basic Rental</h3>
+                <p>For casual riders who need a bike for a few hours or a day.</p>
+                <div class="price">&#8377; 70/hour</div>
+                <div class="discount">&#8377; 100/hour</div>
+                <ul>
+                    <li>Up to 5 hours rental</li>
+                    <li>Basic city bike</li>
+                    <li>Free helmet included</li>
+                </ul>
+                <a href="details.html?plan=Basic%20Rental&price=70&duration=hour" class="cta">Rent Now</a>
+            </div>
+
+            <div class="pricing-item">
+                <h3>Premium Rental</h3>
+                <p>For those who need more flexibility with a longer rental period.</p>
+                <div class="price">&#8377; 100/day</div>
+                <div class="discount">&#8377; 150/day</div>
+                <ul>
+                    <li>1 full day rental</li>
+                    <li>City or road bikes</li>
+                    <li>Free helmet & lock included</li>
+                </ul>
+                <a href="details.html?plan=Premium%20Rental&price=100&duration=day" class="cta">Rent Now</a>
+            </div>
+
+            <div class="pricing-item">
+                <h3>Adventure Rental</h3>
+                <p>For thrill-seekers ready for mountain trails and off-road adventures.</p>
+                <div class="price">&#8377; 200/day</div>
+                <div class="discount">&#8377; 300/day</div>
+                <ul>
+                    <li>1 full day rental</li>
+                    <li>Mountain or hybrid bikes</li>
+                    <li>Free helmet & repair kit included</li>
+                    <li>Suitable for off-road terrain</li>
+                </ul>
+                <a href="details.html?plan=Adventure%20Rental&price=200&duration=day" class="cta">Rent Now</a>
+            </div>
+
+            <div class="pricing-item">
+                <h3>Electric Bike Rental</h3>
+                <p>For a smooth, effortless ride with electric assistance.</p>
+                <div class="price">&#8377; 80/hour</div>
+                <div class="discount">&#8377; 120/hour</div>
+                <ul>
+                    <li>Electric bikes for easier riding</li>
+                    <li>Great for longer distances</li>
+                    <li>Free helmet & charger included</li>
+                </ul>
+                <a href="details.html?plan=Electric%20Bike%20Rental&price=80&duration=hour" class="cta">Rent Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bike Rental Service | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

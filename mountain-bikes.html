@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Bikes - Bike Rental Service</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        header nav ul li {
+            margin: 0 15px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .bike-section {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .bike-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .bikes-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .bike-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .bike-item:hover {
+            transform: scale(1.05);
+        }
+
+        .bike-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .bike-item h3 {
+            margin-top: 15px;
+            font-size: 1.8em;
+            color: #3498db;
+        }
+
+        .bike-item p {
+            font-size: 1em;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .bike-item .price {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <h1>Bike Rental Service - Mountain Bikes</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bikes.html">Our Bikes</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mountain Bikes Section -->
+    <section class="bike-section">
+        <h2>Our Mountain Bikes Collection</h2>
+        <div class="bikes-container">
+
+            <!-- Bike 1 -->
+            <div class="bike-item">
+                <img src="https://s.alicdn.com/@sc04/kf/H3a3969f9ecea482da8090967637ae046R.jpg_300x300.jpg" alt="Mountain Bike 1">
+                <h3>Mountain Bike 1</h3>
+                <p>Durable and built for adventure on rugged trails. Perfect for those who love the outdoors.</p>
+                <p class="price">RS.400/hour | RS.1,500/day</p>
+            </div>
+
+            <!-- Bike 2 -->
+            <div class="bike-item">
+                <img src="https://via.placeholder.com/300x200?text=Mountain+Bike+2" alt="Mountain Bike 2">
+                <h3>Mountain Bike 2</h3>
+                <p>Engineered for challenging terrains with superior suspension and grip. Take on the wild!</p>
+                <p class="price">RS.500/hour | RS.1,800/day</p>
+            </div>
+
+            <!-- Bike 3 -->
+            <div class="bike-item">
+                <img src="https://via.placeholder.com/300x200?text=Mountain+Bike+3" alt="Mountain Bike 3">
+                <h3>Mountain Bike 3</h3>
+                <p>Ideal for mountain trails and rough roads. Enjoy a smooth ride on difficult terrain.</p>
+                <p class="price">RS.450/hour | RS.1,600/day</p>
+            </div>
+
+            <!-- Bike 4 -->
+            <div class="bike-item">
+                <img src="https://via.placeholder.com/300x200?text=Mountain+Bike+4" alt="Mountain Bike 4">
+                <h3>Mountain Bike 4</h3>
+                <p>High-performance mountain bike with enhanced durability and performance for tough rides.</p>
+                <p class="price">RS.600/hour | RS.2,000/day</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bike Rental Service | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

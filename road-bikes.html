@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Bikes - Bike Rental Service</title>
+    <style>
+        /* Basic Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; }
+        header { background-color: #333; color: white; padding: 20px; text-align: center; }
+        header nav ul { list-style: none; display: flex; justify-content: center; padding: 10px 0; }
+        header nav ul li { margin: 0 15px; }
+        header nav ul li a { color: white; text-decoration: none; font-size: 16px; }
+        header nav ul li a:hover { text-decoration: underline; }
+        .bike-section { padding: 50px 20px; text-align: center; background-color: #fff; }
+        .bike-section h2 { font-size: 2.5em; margin-bottom: 30px; }
+        .bikes-container { display: flex; flex-wrap: wrap; justify-content: space-around; margin-top: 30px; }
+        .bike-item { background-color: white; padding: 20px; border-radius: 10px; width: 30%; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); margin-bottom: 30px; text-align: center; transition: transform 0.3s ease; }
+        .bike-item:hover { transform: scale(1.05); }
+        .bike-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; }
+        .bike-item h3 { margin-top: 15px; font-size: 1.8em; color: #3498db; }
+        .bike-item p { font-size: 1em; color: #666; margin: 10px 0; }
+        .bike-item .price { font-size: 1.3em; font-weight: bold; color: #e74c3c; }
+        footer { background-color: #333; color: white; text-align: center; padding: 15px; }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <h1>Bike Rental Service - Road Bikes</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bikes.html">Our Bikes</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Road Bikes Section -->
+    <section class="bike-section">
+        <h2>Our Road Bikes Collection</h2>
+        <div class="bikes-container">
+
+            <!-- Bike 1 -->
+            <div class="bike-item">
+                <img src="https://via.placeholder.com/300x200?text=Road+Bike+1" alt="Road Bike 1">
+                <h3>Road Bike 1</h3>
+                <p>Perfect for speed and endurance on paved roads. Light, fast, and built for long rides.</p>
+                <p class="price">RS.150/hour | RS.1,200/day</p>
+            </div>
+
+            <!-- Bike 2 -->
+            <div class="bike-item">
+                <img src="https://via.placeholder.com/300x200?text=Road+Bike+2" alt="Road Bike 2">
+                <h3>Road Bike 2</h3>
+                <p>Lightweight design for maximum efficiency, ideal for those looking to achieve peak performance.</p>
+                <p class="price">RS.160/hour | RS.1,250/day</p>
+            </div>
+
+            <!-- Bike 3 -->
+            <div class="bike-item">
+                <img src="https://via.placeholder.com/300x200?text=Road+Bike+3" alt="Road Bike 3">
+                <h3>Road Bike 3</h3>
+                <p>Built for competitive riders, offering excellent aerodynamics and comfort over long distances.</p>
+                <p class="price">RS.170/hour | RS.1,300/day</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Bike Rental Service | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
